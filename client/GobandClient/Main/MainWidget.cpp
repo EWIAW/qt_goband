@@ -4,7 +4,6 @@
 MainWidget::MainWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget),
-    m_Network(new NetWorkManager(this)),
     m_StackWidget(new QStackedWidget(this))
 {
     ui->setupUi(this);
@@ -72,7 +71,7 @@ void MainWidget::switchToPage(PageId pageId)
 
 void MainWidget::initLoginWidgetConnections()
 {
-    connect(static_cast<LoginWidget*>(m_Pages[PageId::Login]),&LoginWidget::loginResquest,this,&MainWidget::handleLoginRequest);
+//    connect(static_cast<LoginWidget*>(m_Pages[PageId::Login]),&LoginWidget::loginResquest,this,&MainWidget::handleLoginRequest);
 }
 
 void MainWidget::handleLoginRequest(const QString &username, const QString &password)

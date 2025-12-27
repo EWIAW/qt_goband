@@ -15,7 +15,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWidget mainWindow;
-    mainWindow.show();
+//    MainWidget mainWindow;
+//    mainWindow.show();
+
+    LoginWidget loginWidget;
+    loginWidget.show();
     return a.exec();
 }

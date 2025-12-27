@@ -1,7 +1,11 @@
 #include "LoginWidget.h"
 #include "ui_LoginWidget.h"
+#include "NetWorkManager.h"
 
 #include <QToolTip>
+
+static QString ip = "175.178.15.192";
+static quint16 port = 3489;
 
 LoginWidget::LoginWidget(QWidget *parent) :
     QWidget(parent),
@@ -29,6 +33,19 @@ void LoginWidget::onLoginButtonClick()
         return;
     }
 
-    emit loginResquest(user,pwd);
-    return;
+    sendLoginRequest(user,pwd);
+}
+
+void LoginWidget::sendLoginRequest(const QString &user, const QString &pwd)
+{
+    //先连接到服务器
+    NetworkManager::instance()->connectToServer(ip,port);
+
+    //构造json数据
+    QJsonObject data;
+    data["protocol"] = Protocol::LOGIN_REQUEST;
+    data["user"] = user;
+    data["pwd"] = pwd;
+
+    QJsonDocument msg(data);
 }

@@ -3,7 +3,8 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 class LoginWidget;
 }
 
@@ -15,11 +16,11 @@ public:
     explicit LoginWidget(QWidget *parent = nullptr);
     ~LoginWidget();
 
-signals:
-    void loginResquest(const QString& username, const QString& password);
-
 private slots:
     void onLoginButtonClick();
+
+private:
+    void sendLoginRequest(const QString& user, const QString& pwd);
 
 private:
     Ui::LoginWidget *ui;

@@ -37,7 +37,6 @@ public slots:
 
 private:
     Ui::MainWidget *ui;
-    NetWorkManager *m_Network;
     QStackedWidget *m_StackWidget;
     QMap<PageId,QWidget*> m_Pages;//存储页面id 和 页面指针 方便快速查找
 };

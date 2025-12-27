@@ -1,35 +1,38 @@
 #ifndef NETWORKMANAGER_H
 #define NETWORKMANAGER_H
 
-#include <QObject>
 #include <QTcpSocket>
+#include <QByteArray>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include "ProtocolRouter.h"
+#include "Protocol.h"
 
-class NetWorkManager : public QObject
+class NetworkManager:public QObject
 {
     Q_OBJECT
+private:
+    QTcpSocket* m_tcpSocket;
+    QByteArray m_buffer;
+
+private:
+    explicit NetworkManager(QObject* parent = nullptr);
+
 public:
-    explicit NetWorkManager(QObject *parent = nullptr);
-    ~NetWorkManager() = default;
+    static NetworkManager* instance();
+    ~NetworkManager() override;
 
-    //连接/断开
-    void connectToServer(const QString &ip, const quint16 &port);
-    void disconnectFromServer();
-    bool isConnected();
+    //连接到服务器
+    void connectToServer(const QString& host, const quint16& port);
 
-    void sendLoginRequest(const QString& username, const QString& password);
-signals:
+    //断开到服务器
+    void disconnectToServer();
+
+    //发送消息
+    void sendMessage(const QJsonDocument& msg);
 
 private slots:
-    void onConnected();
-    void onDisconnected();
     void onReadyRead();
-
-private:
-    void sendToServer(const QJsonObject& obj);//向服务器发送数据函数
-
-
-private:
-    QTcpSocket* m_TcpSocket;
 };
 
-#endif // NETWORKMANAGER_H
+#endif
