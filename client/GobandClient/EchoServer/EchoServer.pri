@@ -1,8 +1,8 @@
 HEADERS += \
-    $$PWD/EchoServer.h \
+#    $$PWD/EchoServer.h \
 
 SOURCES += \
-    $$PWD/EchoServer.cpp \
+#    $$PWD/EchoServer.cpp \
 
 FORMS += \
-    $$PWD/EchoServer.ui
+#    $$PWD/EchoServer.ui
