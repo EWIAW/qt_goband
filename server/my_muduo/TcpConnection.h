@@ -40,6 +40,7 @@ public:
     const std::string &name() const { return _name_; }
     const InetAddress &localAddress() const { return _localAddr_; }
     const InetAddress &peerAddress() const { return _peerAddr_; }
+    uint64_t getid() const { return _id_; }
 
     bool connected() const { return _state_ == kConnected; }
 

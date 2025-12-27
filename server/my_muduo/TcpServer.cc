@@ -86,6 +86,7 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     TcpConnectionPtr conn(new TcpConnection(ioLoop, _nextConnId_, connName, sockfd, localAddr, peerAddr));
     _connectionMap_[connName] = conn; // 这里connectionMap里面使用了shared_ptr引用着TcpConnection对象，
     // 所以即使上一行代码的shared_ptr出作用域了，导致引用计数--，也不会导致TcpConnection对象被销毁
+    _connectionIdMap_[_nextConnId_] = conn;
 
     conn->setConnectionCallback(_connectionCallback_);
     conn->setMessageCallback(_messageCallback_);
@@ -112,6 +113,7 @@ void TcpServer::removeConnectionInLoop(const TcpConnectionPtr &conn)
              _name_.c_str(), conn->name().c_str());
 
     _connectionMap_.erase(conn->name());
+    _connectionIdMap_.erase(conn->getid());
     EventLoop *ioLoop = conn->getLoop();
     ioLoop->queueInLoop(std::bind(&TcpConnection::connectDestroyed, conn));
 }

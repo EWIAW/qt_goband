@@ -58,7 +58,8 @@ private:
     void removeConnectionInLoop(const TcpConnectionPtr &conn);
 
 private:
-    using ConnectionMap = std::unordered_map<std::string, TcpConnectionPtr>;
+    using ConnectionNameMap = std::unordered_map<std::string, TcpConnectionPtr>;
+    using ConnectionIdMap = std::unordered_map<int, TcpConnectionPtr>;
 
     EventLoop *_loop_; // 外部传入的mainloop
     const std::string _ipPort_;
@@ -77,7 +78,8 @@ private:
 
     std::atomic_int _started_; // 表示服务器启动状态，0表示未启动
     int _nextConnId_;
-    ConnectionMap _connectionMap_; // 保存所有连接
+    ConnectionNameMap _connectionMap_; // 保存所有连接，可以用连接的名字找到
+    ConnectionIdMap _connectionIdMap_; // 保存所有连接，可以用连接的id找到
 
     bool _enable_inactive_release_; // 是否开启非活跃连接超时销毁机制
     int _timeouts_;                 // 非活跃连接超时时间

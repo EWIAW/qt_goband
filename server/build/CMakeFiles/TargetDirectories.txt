@@ -1,0 +1,3 @@
+/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles/goband.dir
+/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles/rebuild_cache.dir
