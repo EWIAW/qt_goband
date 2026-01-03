@@ -1,28 +1,47 @@
 #include "GobandServer.h"
+#include "./Protocol/Protocol.h"
+#include "Log.h"
 
-GobandServer::GobandServer(EventLoop *loop,
-                           const InetAddress &addr,
-                           const std::string &name)
-    : server_(loop, addr, name),
-      loop_(loop)
+GobandServer::GobandServer(EventLoop *loop, const InetAddress &addr, const std::string &name)
+    : _server(loop, addr, name),
+      _loop(loop),
+      _messageHandler(_userManager)
+
 {
     // 注册回调函数
-    server_.setConnectionCallback(
-        std::bind(&GobandServer::onConnection, this, std::placeholders::_1));
+    _server.setConnectionCallback(std::bind(&GobandServer::onConnection, this, std::placeholders::_1));
 
-    server_.setMessageCallback(
-        std::bind(&GobandServer::onMessage, this,
-                  std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+    _server.setMessageCallback(std::bind(&GobandServer::onMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 
     // 设置合适的loop线程数量 loopthread
-    server_.setThreadNum(1);
+    _server.setThreadNum(3);
+
+    // 初始化消息处理器
+    initMessageHandlers();
     // server_.setEnableInactiveRelease(10);
 }
 
-//服务开始运行
+void GobandServer::initMessageHandlers()
+{
+    _distributeMessage[Protocol::LOGIN_REQUEST] = std::bind(&MessageHandler::handleLoginRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+    // _messageHandlers[ROOM_LIST_REQUEST] =
+    //     std::bind(&MessageHandler::handleRoomListRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+    // _messageHandlers[CREATE_ROOM_REQUEST] =
+    //     std::bind(&MessageHandler::handleCreateRoomRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+    // _messageHandlers[JOIN_ROOM_REQUEST] =
+    //     std::bind(&MessageHandler::handleJoinRoomRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+    // _messageHandlers[LEAVE_ROOM_REQUEST] =
+    //     std::bind(&MessageHandler::handleLeaveRoomRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+    // _messageHandlers[GAME_MOVE_REQUEST] =
+    //     std::bind(&MessageHandler::handleGameMoveRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+    // _messageHandlers[CHAT_MESSAGE_REQUEST] =
+    //     std::bind(&MessageHandler::handleChatMessageRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
+}
+
+// 服务开始运行
 void GobandServer::start()
 {
-    server_.start();
+    _server.start();
 }
 
 // 连接建立或者断开的回调
@@ -30,19 +49,51 @@ void GobandServer::onConnection(const TcpConnectionPtr &conn)
 {
     if (conn->connected())
     {
-        LOG_INFO("Connection UP : %s", conn->peerAddress().GetIpPort().c_str());
+        LOG_DEBUG("Connection UP : %s", conn->peerAddress().GetIpPort().c_str());
     }
     else
     {
-        LOG_INFO("Connection DOWN : %s", conn->peerAddress().GetIpPort().c_str());
+        LOG_DEBUG("Connection DOWN : %s", conn->peerAddress().GetIpPort().c_str());
+
+        // 将用户的信息从user_manager中移除
+        _userManager.removeUser(conn->getid());
     }
 }
 
 // 可读写事件回调
-void GobandServer::onMessage(const TcpConnectionPtr &conn,
-                             Buffer *buf,
-                             Timestamp time)
+void GobandServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestamp time)
 {
-    std::string msg = buf->retrieveAllAsString();
-    conn->send(msg);
+    // 先判断是否有一条完整的消息
+    int size = 0;                 // 消息的长度
+    if (buf->readableBytes() > 4) // 说明可以获取到一条消息的消息头
+    {
+        memcpy(&size, buf->peek(), sizeof(size)); // 先获取消息头
+        size = ntohl(size);
+        if (size >= buf->readableBytes() - 4) // 说明有一条完整的消息
+        {
+            buf->retrieve(sizeof(size));
+            std::string msg = buf->retrieveAsString(size);
+
+            // 解析JSON消息
+            Json::Value root;
+            Json::Reader reader;
+            if (!reader.parse(msg, root))
+            {
+                LOG_WARNING("Failed to parse JSON message: %s", msg.c_str());
+                return;
+            }
+
+            int msgType = root["protocol"].asInt();
+            auto handlerIt = _distributeMessage.find(msgType);
+            if (handlerIt != _distributeMessage.end())
+            {
+                LOG_DEBUG("Recv the message size: %d [%s]",size,msg.c_str());
+                handlerIt->second(conn, root);
+            }
+            else
+            {
+                LOG_WARNING("Unknown message type: %d", msgType);
+            }
+        }
+    }
 }

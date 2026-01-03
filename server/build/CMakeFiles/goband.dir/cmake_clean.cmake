@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.o"
   "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.o.d"
+  "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o"
+  "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o.d"
+  "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o"
+  "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o.d"
+  "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o"
+  "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o.d"
   "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o"
   "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o.d"
   "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.cc.o"

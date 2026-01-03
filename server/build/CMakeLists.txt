@@ -43,17 +43,24 @@ get_filename_component(PROJECT_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.." ABSOLUTE)
 
 # muduo 源码目录
 set(MUDUO_SRC_DIR "${PROJECT_ROOT}/my_muduo")
+
 # GobandServer 源码目录
 set(GOBAND_SRC_DIR "${PROJECT_ROOT}/GobandServer")
+set(GOBAND_HANDLER_SRC_DIR "${PROJECT_ROOT}/GobandServer/Handler")
+set(GOBAND_MANAGER_SRC_DIR "${PROJECT_ROOT}/GobandServer/Manager")
 
 # 收集所有源文件
 file(GLOB MUDUO_SOURCES "${MUDUO_SRC_DIR}/*.cc")
 file(GLOB GOBAND_SOURCES "${GOBAND_SRC_DIR}/*.cc")
+file(GLOB GOBAND_HANDLER_SOURCES "${GOBAND_HANDLER_SRC_DIR}/*.cc")
+file(GLOB GOBAND_MANAGER_SOURCES "${GOBAND_MANAGER_SRC_DIR}/*.cc")
 
 # 合并所有源文件
 set(ALL_SOURCES
     ${MUDUO_SOURCES}
     ${GOBAND_SOURCES}
+    ${GOBAND_HANDLER_SOURCES}
+    ${GOBAND_MANAGER_SOURCES}
 )
 
 # 添加可执行文件
@@ -63,6 +70,8 @@ add_executable(goband ${ALL_SOURCES})
 target_include_directories(goband PRIVATE
     ${MUDUO_SRC_DIR}
     ${GOBAND_SRC_DIR}
+    ${GOBAND_HANDLER_SRC_DIR}
+    ${GOBAND_MANAGER_SRC_DIR}
     /usr/include/jsoncpp
     /usr/include/mysql
 )
@@ -83,6 +92,8 @@ target_link_libraries(goband PRIVATE
 message(STATUS "PROJECT_ROOT = ${PROJECT_ROOT}")
 message(STATUS "MUDUO_SRC_DIR = ${MUDUO_SRC_DIR}")
 message(STATUS "GOBAND_SRC_DIR = ${GOBAND_SRC_DIR}")
+message(STATUS "GOBAND_HANDLER_SRC_DIR = ${GOBAND_HANDLER_SRC_DIR}")
+message(STATUS "GOBAND_MANAGER_SRC_DIR = ${GOBAND_MANAGER_SRC_DIR}")
 message(STATUS "ALL_SOURCES = ${ALL_SOURCES}")
 
 

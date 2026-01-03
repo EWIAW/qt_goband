@@ -335,10 +335,24 @@ CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandSer
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.s
 
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o: CMakeFiles/goband.dir/flags.make
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o: /home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o: CMakeFiles/goband.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o -MF CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o.d -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o -c /home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc > CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s
+
 CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o: CMakeFiles/goband.dir/flags.make
 CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o: /home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc
 CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o: CMakeFiles/goband.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o -MF CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o.d -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o -c /home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc
 
 CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.i: cmake_force
@@ -348,6 +362,34 @@ CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.i
 CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.s
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o: CMakeFiles/goband.dir/flags.make
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o: /home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o: CMakeFiles/goband.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o -MF CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o.d -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o -c /home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc > CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o: CMakeFiles/goband.dir/flags.make
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o: /home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o: CMakeFiles/goband.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o -MF CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o.d -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o -c /home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc > CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i
+
+CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc -o CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s
 
 # Object files for target goband
 goband_OBJECTS = \
@@ -370,7 +412,10 @@ goband_OBJECTS = \
 "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/TimerWheel.cc.o" \
 "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Timestamp.cc.o" \
 "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.o" \
-"CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o"
+"CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o" \
+"CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o" \
+"CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o" \
+"CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o"
 
 # External object files for target goband
 goband_EXTERNAL_OBJECTS =
@@ -394,10 +439,13 @@ goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Timer
 goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/TimerWheel.cc.o
 goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Timestamp.cc.o
 goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.o
+goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o
 goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o
+goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o
+goband: CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o
 goband: CMakeFiles/goband.dir/build.make
 goband: CMakeFiles/goband.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable goband"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/MyFile/qt_goband/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable goband"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/goband.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

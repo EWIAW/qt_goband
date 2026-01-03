@@ -9,6 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.o.d"
+  "/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o.d"
+  "/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o.d"
+  "/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o.d"
   "/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o.d"
   "/home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.cc.o.d"
   "/home/ubuntu/MyFile/qt_goband/server/my_muduo/Buffer.cc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Buffer.cc.o" "gcc" "CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/my_muduo/Buffer.cc.o.d"

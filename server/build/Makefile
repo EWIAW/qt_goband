@@ -153,6 +153,78 @@ home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.s
 .PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.cc.s
 
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.s
+
 home/ubuntu/MyFile/qt_goband/server/GobandServer/main.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.o
 .PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/main.o
 
@@ -621,6 +693,15 @@ help:
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.o"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.i"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/GobandServer.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler/message_handler.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.s"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/main.o"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/main.i"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/main.s"
