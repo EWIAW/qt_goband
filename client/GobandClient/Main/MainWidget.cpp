@@ -1,84 +1,45 @@
 #include "MainWidget.h"
 #include "ui_MainWidget.h"
 
+#include <QVBoxLayout>
+
 MainWidget::MainWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget),
-    m_StackWidget(new QStackedWidget(this))
+    m_stackWidget(new QStackedWidget(this))
 {
     ui->setupUi(this);
-
-    m_StackWidget->move(0,0);
-    m_StackWidget->resize(1280,720);
-
-    //初始化所有页面，默认使用懒加载
-    for(int i = 0; i < VPageid.size();i ++)
-    {
-        m_Pages[VPageid[i]] = nullptr;
-    }
-
-    //默认显示登录界面
-    switchToPage(PageId::Login);
+    initAllUi();
+    initAllConnection();
+    // 连接到服务器
+    NetworkManager::instance()->connectToServer("175.178.15.192", 3489);
+    m_stackWidget->setCurrentWidget(m_loginView);
 }
 
 MainWidget::~MainWidget()
 {
     delete ui;
+    delete m_stackWidget;
 }
 
-void MainWidget::createPage(PageId pageId)
+void MainWidget::initAllUi()
 {
-    if (m_Pages[pageId] != nullptr)
-        return; // 说明已创建
+    setWindowTitle("五子棋客户端");
+    resize(800, 600);
 
-    QWidget* page = nullptr;
-    switch (pageId)
-    {
-    case PageId::Login:
-    {
-        auto *w = new LoginWidget(this);
-        initLoginWidgetConnections();
-        page = w;
-        break;
-    }
-    case PageId::Register:
-        page = new RegisterWidget(this);
-        break;
-    case PageId::Count:
-        page = nullptr;
-        break;
-    }
+    // 布局管理器
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    layout->addWidget(m_stackWidget);
+    setLayout(layout);
 
-    if (page)
-    {
-        m_Pages[pageId] = page;
-        m_StackWidget->addWidget(page); // 添加到 stackedWidget
-    }
+    // 创建各个视图
+    m_loginView = new LoginView();
+
+    // 添加到堆栈部件
+    m_stackWidget->addWidget(m_loginView);
 }
 
-void MainWidget::switchToPage(PageId pageId)
+void MainWidget::initAllConnection()
 {
-    // 懒加载：只在需要时创建
-    if (!m_Pages.contains(pageId))
-    {
-        qWarning() << "Unknown page:" << static_cast<int>(pageId);
-        return;
-    }
-
-    createPage(pageId); // 如果未创建，现在创建
-    m_StackWidget->setCurrentWidget(m_Pages[pageId]);
-}
-
-void MainWidget::initLoginWidgetConnections()
-{
-//    connect(static_cast<LoginWidget*>(m_Pages[PageId::Login]),&LoginWidget::loginResquest,this,&MainWidget::handleLoginRequest);
-}
-
-void MainWidget::handleLoginRequest(const QString &username, const QString &password)
-{
-    //1.连接到服务器
-    //2.登录验证
-    //3.切换到大厅页面
-
-    //1.
+    m_loginPresenter = new LoginPresenter(m_loginView, this);
 }

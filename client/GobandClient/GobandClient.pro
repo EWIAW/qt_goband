@@ -16,12 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 INCLUDEPATH += \
+    $$PWD/Model/ \
     $$PWD/View/ \
+    $$PWD/Presenter/ \
     $$PWD/Main/ \
     $$PWD/EchoServer/ \
     $$PWD/NetWork/ \
 
+include($$PWD/Model/model.pri)
 include($$PWD/View/view.pri)
+include($$PWD/Presenter/presenter.pri)
 include($$PWD/Main/main.pri)
 include($$PWD/EchoServer/EchoServer.pri)
 include($$PWD/NetWork/network.pri)

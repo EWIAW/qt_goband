@@ -1,16 +1,12 @@
 #ifndef MAINWIDGET_H
 #define MAINWIDGET_H
 
-#include "PageId.h"
-#include "LoginWidget.h"
-#include "RegisterWidget.h"
-#include "NetWorkManager.h"
-
-#include <QDebug>
+#include <QObject>
 #include <QWidget>
 #include <QStackedWidget>
-#include <QMap>
-#include <QSet>
+
+#include "LoginView.h"
+#include "LoginPresenter.h"
 
 namespace Ui {
 class MainWidget;
@@ -24,21 +20,19 @@ public:
     explicit MainWidget(QWidget *parent = nullptr);
     ~MainWidget();
 
-private:
-    void createPage(PageId pageId);//创建页面
-    void switchToPage(PageId pageId);//切换页面
-
-    void initLoginWidgetConnections();//连接登录界面的信号槽
-
-
-
-public slots:
-    void handleLoginRequest(const QString& username, const QString& password);
+    void initAllUi();//初始化所有界面
+    void initAllConnection();//初始化所有连接
 
 private:
     Ui::MainWidget *ui;
-    QStackedWidget *m_StackWidget;
-    QMap<PageId,QWidget*> m_Pages;//存储页面id 和 页面指针 方便快速查找
+
+    QStackedWidget* m_stackWidget;
+
+    //视图
+    LoginView* m_loginView;
+
+    //控制器
+    LoginPresenter* m_loginPresenter;
 };
 
 #endif // MAINWIDGET_H

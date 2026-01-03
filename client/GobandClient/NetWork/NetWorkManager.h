@@ -5,34 +5,44 @@
 #include <QByteArray>
 #include <QJsonObject>
 #include <QJsonDocument>
-#include "ProtocolRouter.h"
 #include "Protocol.h"
 
-class NetworkManager:public QObject
+class NetworkManager : public QObject
 {
     Q_OBJECT
-private:
-    QTcpSocket* m_tcpSocket;
-    QByteArray m_buffer;
-
-private:
-    explicit NetworkManager(QObject* parent = nullptr);
 
 public:
-    static NetworkManager* instance();
-    ~NetworkManager() override;
+    static NetworkManager *instance();
+    ~NetworkManager();
 
-    //连接到服务器
-    void connectToServer(const QString& host, const quint16& port);
+    void connectToServer(const QString &host, quint16 port);
+    void disconnectFromServer();
+    bool isConnected() const;
 
-    //断开到服务器
-    void disconnectToServer();
+    void sendMessage(int protocolType, const QJsonObject &data);
 
-    //发送消息
-    void sendMessage(const QJsonDocument& msg);
+    void registerMessageHandler(int protocolType, std::function<void(const QJsonObject &)> handler);
+
+signals:
+//    void connected();
+//    void disconnected();
+    void connectionError(const QString &error);
 
 private slots:
     void onReadyRead();
+//    void onSocketError(QAbstractSocket::SocketError error);
+
+private:
+    explicit NetworkManager(QObject *parent = nullptr);
+
+    void processData();
+    void parseMessage(const QByteArray &data);
+
+    QTcpSocket *m_socket;
+    QByteArray m_buffer;
+    static NetworkManager *s_instance;
+
+    QMap<int, std::function<void(const QJsonObject &)>> m_messageHandlers;
 };
 
 #endif
