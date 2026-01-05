@@ -7,17 +7,6 @@ Json::Value UserManager::UserRegister(const std::string &username, const std::st
     Json::Value response;
     response["type"] = Protocol::REGISTER_RESPONSE;
 
-    // 查数据库，检查用户名是否已存在
-    // 新用户注册
-    // uint64_t userId = _nextUserId++;
-    // UserInfo newUser(userId, username, password);
-    // _usersTableTableTable[userId] = newUser;
-    // _usernameToId[username] = userId;
-
-    // response["success"] = true;
-    // response["userId"] = userId;
-    // response["username"] = username;
-
     return response;
 }
 
@@ -26,30 +15,6 @@ Json::Value UserManager::UserLogin(const std::string &username, const std::strin
     std::lock_guard<std::mutex> lock(_mutex);
 
     Json::Value response;
-    response["type"] = Protocol::LOGIN_RESPONSE;
-
-    // 查数据库
-    //  检查用户名是否已存在
-    //  auto userIt = _nameToUser.find(username);
-    //  if (userIt != _nameToUser.end())
-    //  {
-    //      // 用户名已存在，检查密码
-    //      uint64_t userId = userIt->second;
-    //      auto userInfoIt = _usersTableTable.find(userId);
-    //      if (userInfoIt != _usersTableTable.end() && userInfoIt->second.password == password)
-    //      {
-    //          // 登录成功
-    //          response["success"] = true;
-    //          response["userId"] = userId;
-    //          response["username"] = username;
-    //      }
-    //      else
-    //      {
-    //          // 密码错误
-    //          response["success"] = false;
-    //          response["error"] = "Invalid password";
-    //      }
-    //  }
 
     if (username == "zrb" && password == "123456")
     {
@@ -58,13 +23,16 @@ Json::Value UserManager::UserLogin(const std::string &username, const std::strin
         response["userId"] = 1;
         response["username"] = username;
     }
-
-    if (username == "rjk" && password == "123456")
+    else if (username == "rjk" && password == "123456")
     {
         // 登录成功
         response["success"] = true;
         response["userId"] = 2;
         response["username"] = username;
+    }
+    else
+    {
+        response["success"] = false;
     }
 
     return response;
