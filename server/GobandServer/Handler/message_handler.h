@@ -11,7 +11,6 @@ class MessageHandler
 {
 private:
     UserManager &_userManager;
-    // RoomManager& _roomManager;
 
 public:
     MessageHandler(UserManager &userManager);

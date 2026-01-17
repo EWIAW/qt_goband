@@ -34,7 +34,6 @@ Json::Value UserManager::UserLogin(const std::string &username, const std::strin
     {
         response["success"] = false;
     }
-
     return response;
 }
 
@@ -53,6 +52,7 @@ bool UserManager::getUserInfo(const uint64_t &userId, UserInfo &info) // 获取�
 bool UserManager::setUserInfo(const uint64_t &userId, const UserInfo &info) // 用户信息 填入 _userTable
 {
     std::lock_guard<std::mutex> lock(_mutex);
+
     auto it = _usersTable.find(userId);
     if (it != _usersTable.end())
     {
@@ -82,6 +82,7 @@ uint64_t UserManager::getIdFromConn(const uint64_t &tcpConnId) // 获取用户id
 bool UserManager::setIdFromConn(const uint64_t &tcpConnId, const uint64_t &userId) // 设置用户id
 {
     std::lock_guard<std::mutex> lock(_mutex);
+
     auto it = _connToId.find(tcpConnId);
     if (it != _connToId.end())
     {
@@ -111,6 +112,7 @@ uint64_t UserManager::getIdFromName(const std::string &username) // 获取用户
 bool UserManager::setIdFromName(const std::string &username, const uint64_t &userId) // 设置用户id
 {
     std::lock_guard<std::mutex> lock(_mutex);
+
     auto it = _nameToId.find(username);
     if (it != _nameToId.end())
     {
@@ -123,13 +125,13 @@ bool UserManager::setIdFromName(const std::string &username, const uint64_t &use
 void UserManager::removeIdFromName(const std::string &username) // 删除username -> 用户ID
 {
     std::lock_guard<std::mutex> lock(_mutex);
+
     _nameToId.erase(username);
 }
 
 void UserManager::removeUser(const uint64_t &tcpConnId) // 将用户信息完全从 UserManager中删除
 {
-    std::lock_guard<std::mutex> lock(_mutex);
-
+    //整个函数不需要加锁，因为调用了自身的函数
     uint64_t userId = getIdFromConn(tcpConnId);
     UserInfo user_info;
     getUserInfo(userId, user_info);
@@ -139,82 +141,3 @@ void UserManager::removeUser(const uint64_t &tcpConnId) // 将用户信息完全
     removeIdFromConn(tcpConnId);
     removeIdFromName(username);
 }
-
-uint64_t UserManager::getUserRoomId(const uint64_t &userId)
-{
-    std::lock_guard<std::mutex> lock(_mutex);
-    auto it = _usersTable.find(userId);
-    if (it != _usersTable.end())
-    {
-        return it->second._roomId;
-    }
-    return 0;
-}
-
-bool UserManager::setUserRoomId(const uint64_t &userId, const uint64_t &roomId)
-{
-    std::lock_guard<std::mutex> lock(_mutex);
-    auto it = _usersTable.find(userId);
-    if (it != _usersTable.end())
-    {
-        it->second._roomId = roomId;
-        return true;
-    }
-    return false;
-}
-
-// void UserManager::removeUserConnection(uint64_t connId)
-// {
-//     std::lock_guard<std::mutex> lock(_mutex);
-//     auto it = _connToUser.find(connId);
-//     if (it != _connToUser.end())
-//     {
-//         uint64_t userId = it->second;
-//         auto userIt = _usersTable.find(userId);
-//         if (userIt != _usersTable.end())
-//         {
-//             userIt->second._roomId = 0; // 离开房间
-//         }
-//         _connToUser.erase(it);
-//     }
-// }
-
-// std::shared_ptr<TcpConnection> UserManager::getUserConnection(uint64_t userId)
-// {
-//     std::lock_guard<std::mutex> lock(_mutex);
-//     auto it = _usersTable.find(userId);
-//     if (it != _usersTable.end())
-//     {
-//         return it->second._uConn.lock(); // 使用lock()获取shared_ptr
-//     }
-//     return nullptr;
-// }
-
-// uint64_t UserManager::getUserId(const std::string &username)
-// {
-//     std::lock_guard<std::mutex> lock(_mutex);
-//     auto it = _nameToUser.find(username);
-//     if (it != _nameToUser.end())
-//     {
-//         return it->second;
-//     }
-//     return 0;
-// }
-
-// bool UserManager::usernameExists(const std::string &username)
-// {
-//     std::lock_guard<std::mutex> lock(_mutex);
-//     return _nameToUser.find(username) != _nameToUser.end();
-// }
-
-// void UserManager::removeUser(uint64_t userId)
-// {
-//     std::lock_guard<std::mutex> lock(_mutex);
-//     auto userIt = _usersTable.find(userId);
-//     if (userIt != _usersTable.end())
-//     {
-//         std::string username = userIt->second._userName;
-//         _usersTable.erase(userIt);
-//         _nameToUser.erase(username);
-//     }
-// }

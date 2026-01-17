@@ -40,27 +40,6 @@ public:
     bool setIdFromName(const std::string &username, const uint64_t &userId); // 设置username -> 用户ID
     void removeIdFromName(const std::string &username);                      // 删除username -> 用户ID
 
-    // 将用户信息完全从 UserManager中删除
+    // 将用户信息完全从UserManager中删除
     void removeUser(const uint64_t &tcpConnId);
-
-    // 房间id操作
-    uint64_t getUserRoomId(const uint64_t &userId);                     // 获取用户房间id
-    bool setUserRoomId(const uint64_t &userId, const uint64_t &roomId); // 设置用户房间ID
-
-    // // 移除用户连接
-    // void removeUserConnection(uint64_t connId);
-
-    // // 获取用户连接
-    // std::shared_ptr<TcpConnection> getUserConnection(uint64_t userId);
-
-    // // 获取用户ID
-    // uint64_t getUserId(const std::string &username);
-
-    // // 检查用户名是否存在
-    // bool usernameExists(const std::string &username);
-
-    // // 移除用户
-    // void removeUser(uint64_t userId);
-
-private:
 };

@@ -23,18 +23,6 @@ GobandServer::GobandServer(EventLoop *loop, const InetAddress &addr, const std::
 void GobandServer::initMessageHandlers()
 {
     _distributeMessage[Protocol::LOGIN_REQUEST] = std::bind(&MessageHandler::handleLoginRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
-    // _messageHandlers[ROOM_LIST_REQUEST] =
-    //     std::bind(&MessageHandler::handleRoomListRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
-    // _messageHandlers[CREATE_ROOM_REQUEST] =
-    //     std::bind(&MessageHandler::handleCreateRoomRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
-    // _messageHandlers[JOIN_ROOM_REQUEST] =
-    //     std::bind(&MessageHandler::handleJoinRoomRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
-    // _messageHandlers[LEAVE_ROOM_REQUEST] =
-    //     std::bind(&MessageHandler::handleLeaveRoomRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
-    // _messageHandlers[GAME_MOVE_REQUEST] =
-    //     std::bind(&MessageHandler::handleGameMoveRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
-    // _messageHandlers[CHAT_MESSAGE_REQUEST] =
-    //     std::bind(&MessageHandler::handleChatMessageRequest, &_messageHandler, std::placeholders::_1, std::placeholders::_2);
 }
 
 // 服务开始运行
