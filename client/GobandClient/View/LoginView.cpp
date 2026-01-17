@@ -21,11 +21,18 @@ void LoginView::onLoginButtonClicked()
 {
     QString username = ui->username_lineEdit->text().trimmed();
     QString password = ui->password_lineEdit->text();
-
-    if(username.isEmpty() || password.isEmpty())
-    {
-        QMessageBox::warning(this, "提示", "请输入用户名和密码");
-    }
-
     emit loginRequest(username, password);
+}
+
+void LoginView::showError(const QString &message)
+{
+    QMessageBox::warning(this,"提示",message);
+}
+
+void LoginView::loginResponse(bool success)
+{
+    if(success == false)
+    {
+        showError("用户名或密码错误");
+    }
 }

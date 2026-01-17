@@ -2,28 +2,36 @@
 
 #include "LoginPresenter.h"
 
-LoginPresenter::LoginPresenter(LoginView* view, QObject *parent)
+LoginPresenter::LoginPresenter(LoginModel* model,LoginView* view, QObject *parent)
     : QObject(parent),
+      m_model(model),
       m_view(view)
 {
-    connect(m_view,&LoginView::loginRequest,this,&LoginPresenter::handleLogin);
+    connect(m_view,&LoginView::loginRequest,this,&LoginPresenter::handleLoginResquest);
 
-    //注册消息处理器
-    NetworkManager::instance()->registerMessageHandler(Protocol::LOGIN_RESPONSE,
-                                                       [this](const QJsonObject &data)
-    { handleLoginResponse(data); });
+    connect(m_model,&LoginModel::SignalLoginResponse,this,&LoginPresenter::handleLoginResponse);
 }
 
-void LoginPresenter::handleLogin(const QString &username, const QString &password)
+void LoginPresenter::handleLoginResquest(const QString &username, const QString &password)
 {
-    QJsonObject data;
-    data["username"] = username;
-    data["password"] = password;
-    NetworkManager::instance()->sendMessage(Protocol::LOGIN_REQUEST,data);
+    //判断用户名和密码是否位空
+    if(username.isNull() || password.isNull())
+    {
+        m_view->showError("请输入用户名或密码");
+        return;
+    }
+    m_model->onLoginResquest(username,password);
 }
 
-void LoginPresenter::handleLoginResponse(const QJsonObject &data)
+void LoginPresenter::handleLoginResponse(bool success)
 {
-    qDebug()<<data;
+    if(success)
+    {
+        m_view->showError("登录成功");
+    }
+    else
+    {
+        m_view->showError("用户名或密码错误");
+    }
 }
 

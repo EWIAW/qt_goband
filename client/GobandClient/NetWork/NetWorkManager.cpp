@@ -1,4 +1,4 @@
-﻿// network_manager.cpp
+// network_manager.cpp
 #include "NetWorkManager.h"
 #include <QJsonDocument>
 #include <QTimer>
@@ -22,10 +22,6 @@ NetworkManager::NetworkManager(QObject *parent)
     : QObject(parent), m_socket(new QTcpSocket(this))
 {
     connect(m_socket, &QTcpSocket::readyRead, this, &NetworkManager::onReadyRead);
-    //    connect(m_socket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error),
-    //            this, &NetworkManager::onSocketError);
-    //    connect(m_socket, &QTcpSocket::connected, this, &NetworkManager::connected);
-    //    connect(m_socket, &QTcpSocket::disconnected, this, &NetworkManager::disconnected);
 }
 
 NetworkManager::~NetworkManager()
@@ -60,10 +56,12 @@ bool NetworkManager::isConnected() const
 
 //发送数据形式
 //{
-//  protocol:1
-//  data
-//}
-
+//     "protocol":"3"
+//     "data":{
+//               "username":"zrb"
+//               "password":"123455"
+//            }
+// }
 void NetworkManager::sendMessage(int protocolType, const QJsonObject &data)
 {
     if (!isConnected())
@@ -94,47 +92,44 @@ void NetworkManager::sendMessage(int protocolType, const QJsonObject &data)
     m_socket->flush();
 }
 
-void NetworkManager::registerMessageHandler(int protocolType, std::function<void(const QJsonObject &)> handler)
-{
-    m_messageHandlers[protocolType] = handler;
-}
-
 void NetworkManager::onReadyRead()
 {
     m_buffer.append(m_socket->readAll());
-    qCDebug(networkLog)<<m_buffer;
-    //    processData();
-}
 
-//void NetworkManager::onSocketError(QAbstractSocket::SocketError error)
-//{
-//    Q_UNUSED(error)
-//    emit connectionError(m_socket->errorString());
-//}
-
-void NetworkManager::processData()
-{
-    while (m_buffer.size() >= sizeof(int))
+    //判断是否有完整的消息
+    while (m_buffer.size() >= 4)
     {
-        char protocolType = m_buffer[0];
-        int dataLength;
-        memcpy(&dataLength, m_buffer.constData() + 1, sizeof(int));
+        int netLength;//网络字节序
+        memcpy(&netLength, m_buffer.constData(), sizeof(int));
+        int hostLength = qFromBigEndian(netLength);//主机字节序
 
-        if (m_buffer.size() < sizeof(char) + sizeof(int) + dataLength)
+        if (hostLength > m_buffer.size() - 4)
         {
             // 数据不完整，等待更多数据
             break;
         }
 
-        // 提取JSON数据
-        QByteArray jsonData = m_buffer.mid(sizeof(char) + sizeof(int), dataLength);
-        m_buffer = m_buffer.mid(sizeof(char) + sizeof(int) + dataLength);
+        // 提取一条完整JSON数据
+        QByteArray jsonData = m_buffer.mid(4,hostLength);
+        m_buffer.remove(0,4+hostLength);
 
+        qCDebug(networkLog)<<"Recv the message size: "<<hostLength;
+        qCDebug(networkLog)<<jsonData;
         // 解析并处理消息
         parseMessage(jsonData);
     }
 }
 
+// 收到的json数据格式如下:
+//{
+//     "protocol":"4"
+//     "data":{
+//               "success":true
+//               "userid":1
+//               "username":"zrb"
+//            }
+// }
+//将提取处理的字符串时间构造json数据并交给sessionmodel处理
 void NetworkManager::parseMessage(const QByteArray &data)
 {
     QJsonParseError error;
@@ -147,15 +142,5 @@ void NetworkManager::parseMessage(const QByteArray &data)
     }
 
     QJsonObject message = doc.object();
-    int protocolType = message["type"].toInt();
-
-    auto handler = m_messageHandlers.find(protocolType);
-    if (handler != m_messageHandlers.end())
-    {
-        handler.value()(message["data"].toObject());
-    }
-    else
-    {
-        qCWarning(networkLog) << "No handler registered for protocol type:" << protocolType;
-    }
+    emit handoutMessage(message);
 }

@@ -4,23 +4,27 @@
 #include <QObject>
 
 #include "NetWorkManager.h"
+#include "LoginModel.h"
 #include "LoginView.h"
 
 class LoginPresenter : public QObject
 {
     Q_OBJECT
 public:
-    explicit LoginPresenter(LoginView* view, QObject *parent = nullptr);
+    explicit LoginPresenter(LoginModel* model, LoginView* view, QObject *parent = nullptr);
+    ~LoginPresenter() = default;
 
 signals:
 
 private slots:
-    void handleLogin(const QString& username, const QString& password);
+    //view发信号，presenter处理
+    void handleLoginResquest(const QString& username, const QString& password);
+
+    //model发信号，presenter处理
+    void handleLoginResponse(bool success);
 
 private:
-    void handleLoginResponse(const QJsonObject& data);
-
-private:
+    LoginModel* m_model;
     LoginView* m_view;
 };
 
