@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ubuntu/MyFile/qt_goband/server/my_muduo -I/home/ubuntu/MyFile/qt_goband/server/GobandServer -I/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler -I/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager -I/usr/include/jsoncpp -I/usr/include/mysql
+CXX_INCLUDES = -I/home/ubuntu/MyFile/qt_goband/server/my_muduo -I/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool -I/home/ubuntu/MyFile/qt_goband/server/GobandServer -I/home/ubuntu/MyFile/qt_goband/server/GobandServer/Handler -I/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager -I/usr/include/jsoncpp -I/usr/include/mysql
 
 CXX_FLAGS = -Wall -Wextra -std=gnu++14
 

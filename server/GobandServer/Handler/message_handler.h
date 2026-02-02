@@ -17,6 +17,7 @@ public:
 
     // 消息处理函数
     void handleLoginRequest(const std::shared_ptr<TcpConnection> &conn, const Json::Value &request);
+    void handleMatchRequest(const std::shared_ptr<TcpConnection> &conn, const Json::Value &request);
 
 private:
     void sendJsonMessage(const std::shared_ptr<TcpConnection> &conn, const int &protocol, const Json::Value &message);

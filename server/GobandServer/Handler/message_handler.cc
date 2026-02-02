@@ -16,15 +16,17 @@ void MessageHandler::handleLoginRequest(const std::shared_ptr<TcpConnection> &co
     // 如果登录成功，设置用户连接
     if (response["success"].asBool())
     {
-        uint64_t userId = response["userId"].asUInt64();
+        uint64_t userId = response["userid"].asUInt64();
 
         // 构造用户信息插入到user_manager中
         UserInfo info(userId, username, conn);
-        _userManager.setUserInfo(userId, info);
-        _userManager.setIdFromConn(conn->getid(), userId);
-        _userManager.setIdFromName(username, userId);
+        _userManager.addUser(conn->getid(),userId,info);
     }
     sendJsonMessage(conn, Protocol::LOGIN_RESPONSE, response);
+}
+
+void MessageHandler::handleMatchRequest(const std::shared_ptr<TcpConnection> &conn, const Json::Value &request)
+{
 }
 
 // 构造发送消息的json数据格式如下:
@@ -57,7 +59,7 @@ void MessageHandler::sendJsonMessage(const std::shared_ptr<TcpConnection> &conn,
     memcpy(&msg[0], &nsize, sizeof(nsize));
     memcpy(&msg[4], jsonStr.c_str(), size);
 
-    LOG_DEBUG("Send the message size: %d", size);
-    LOG_DEBUG(response.toStyledString().c_str());
+    DLOG("Send the message size: %d", size);
+    DLOG(response.toStyledString().c_str());
     conn->send(msg);
 }

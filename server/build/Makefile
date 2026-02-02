@@ -201,6 +201,102 @@ home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s
 .PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.cc.s
 
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.i: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.s: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.cc.s
+
 home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.o: home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.cc.o
 .PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.o
 
@@ -248,6 +344,54 @@ home/ubuntu/MyFile/qt_goband/server/GobandServer/main.s: home/ubuntu/MyFile/qt_g
 home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.s
 .PHONY : home/ubuntu/MyFile/qt_goband/server/GobandServer/main.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.o: home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.i: home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.s: home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.cc.s
+
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.o: home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.o
+
+# target to build an object file
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.o
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.o
+
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.i: home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.i
+
+# target to preprocess a source file
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.i
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.i
+
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.s: home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.s
+
+# target to generate assembly for a file
+home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/goband.dir/build.make CMakeFiles/goband.dir/home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.s
+.PHONY : home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.cc.s
 
 home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.o: home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.cc.o
 .PHONY : home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.o
@@ -699,12 +843,30 @@ help:
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.o"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.i"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Log.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_manager.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/match_queue.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_info.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/room_manager.s"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.o"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.i"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/Manager/user_manager.s"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/main.o"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/main.i"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/GobandServer/main.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnection.s"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.o"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.i"
+	@echo "... home/ubuntu/MyFile/qt_goband/server/MysqlConnectionPool/MysqlConnectionPool.s"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.o"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.i"
 	@echo "... home/ubuntu/MyFile/qt_goband/server/my_muduo/Acceptor.s"

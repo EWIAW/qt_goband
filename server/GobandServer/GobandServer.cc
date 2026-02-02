@@ -68,7 +68,7 @@ void GobandServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestam
         // 判断是否有恶意数据，后期可以根据消息大小进行调整
         if (size > 1024)
         {
-            LOG_WARNING("The message size is too big , size:%d", size);
+            WLOG("The message size is too big , size:%d", size);
             return;
         }
 
@@ -82,7 +82,7 @@ void GobandServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestam
             Json::Reader reader;
             if (!reader.parse(msg, root))
             {
-                LOG_WARNING("Failed to parse JSON message: %s", msg.c_str());
+                WLOG("Failed to parse JSON message: %s", msg.c_str());
                 return;
             }
 
@@ -91,13 +91,13 @@ void GobandServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestam
             auto handlerIt = _distributeMessage.find(msgProtocol);
             if (handlerIt != _distributeMessage.end())
             {
-                LOG_DEBUG("Recv the message size: %d", size);
-                LOG_DEBUG(root.toStyledString().c_str());
+                DLOG("Recv the message size: %d", size);
+                DLOG(root.toStyledString().c_str());
                 handlerIt->second(conn, data);
             }
             else
             {
-                LOG_WARNING("Unknown message type: %d", msgProtocol);
+                WLOG("Unknown message type: %d", msgProtocol);
             }
         }
     }

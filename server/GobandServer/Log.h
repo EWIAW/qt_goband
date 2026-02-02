@@ -64,11 +64,11 @@ static inline void _log_message(LogLevel level, const char *level_str,
 }
 
 // 宏定义（自动传入函数名和行号）
-#define LOG_DEBUG(fmt, ...) \
+#define DLOG(fmt, ...) \
     _log_message(LOG_LEVEL_DEBUG, "DEBUG", __func__, __LINE__, fmt, ##__VA_ARGS__)
 
-#define LOG_WARNING(fmt, ...) \
+#define WLOG(fmt, ...) \
     _log_message(LOG_LEVEL_WARNING, "WARNING", __func__, __LINE__, fmt, ##__VA_ARGS__)
 
-#define LOG_ERROR(fmt, ...) \
+#define ELOG(fmt, ...) \
     _log_message(LOG_LEVEL_ERROR, "ERROR", __func__, __LINE__, fmt, ##__VA_ARGS__)
